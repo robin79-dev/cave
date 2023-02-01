@@ -8,9 +8,11 @@ Gradle
 
 Comment démarrer
 Clonez le dépôt sur votre ordinateur local:
-bash
+
 Copy code
+```bash
 git clone https://github.com/[username]/cave-a-vin.git
+```
 
 Allez dans le dossier du projet:
 bash
