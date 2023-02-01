@@ -4,10 +4,10 @@ import fr.eni.cave.entities.Bouteille;
 import fr.eni.cave.repository.BouteilleRepository;
 import fr.eni.cave.service.BouteilleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class BouteilleController {
@@ -16,13 +16,13 @@ public class BouteilleController {
     private BouteilleService bouteilleService;
 
     @GetMapping("/Bouteille")
-    public String toto() {
-        return "riti";
+    public List<Bouteille> allBouteille() {
+        return bouteilleService.allBouteille();
     }
 
     @GetMapping("/Bouteille/{id}")
-    public String titi() {
-        return "reiygfytezfytzi";
+    public Optional<Bouteille> bouteilleById(@PathVariable Integer id) {
+        return bouteilleService.getBouteilleById(id);
     }
 
     @PostMapping("/BouteilleAjout")
